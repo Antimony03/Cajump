@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("Collider Settings")]
-    public Vector2 idleColliderSize = new Vector2(0.4159f, 0.583f);
+    public Vector2 idleColliderSize = new Vector2(0.3547031f, 0.5102472f);
     public Vector2 idleColliderOffset = new Vector2(-0.0472f, -0.0836f);
     public Vector2 runColliderSize = new Vector2(0.4178f, 0.2161f);
     public Vector2 runColliderOffset = new Vector2(-0.0472f, -0.0836f); // Same offset assumed for run
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-   void Update()
+    void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
@@ -79,9 +79,9 @@ public class PlayerController : MonoBehaviour
             jumpCount = 0;
         }
 
-        if (collision.gameObject.CompareTag("Saw"))
+        if (collision.gameObject.CompareTag("Star"))
         {
-            // Game Over
+            GameOver();
         }
     }
 
@@ -94,4 +94,10 @@ public class PlayerController : MonoBehaviour
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
     }
+    
+    void GameOver()
+    {
+        FindObjectOfType<GameOverManager>()?.TriggerGameOver();
+    }
+
 }

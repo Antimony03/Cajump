@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starPrefab: {fileID: 1133145264}
-  spawnInterval: 1.5
+  spawnInterval: 3
   xMin: -8
   xMax: 8
   ySpawn: 6
@@ -617,7 +617,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.047206506, y: -0.08359572}
+  m_Offset: {x: -0.016598374, y: -0.119959354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -627,7 +627,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.41591933, y: 0.5829745}
+  m_Size: {x: 0.35470307, y: 0.51024723}
   m_EdgeRadius: 0
 --- !u!50 &1081603508
 Rigidbody2D:
@@ -746,7 +746,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  idleColliderSize: {x: 0.4159, y: 0.583}
+  idleColliderSize: {x: 0.3547031, y: 0.5102472}
   idleColliderOffset: {x: -0.0472, y: -0.0836}
   runColliderSize: {x: 0.4178, y: 0.2161}
   runColliderOffset: {x: -0.0472, y: -0.0836}
@@ -914,8 +914,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.011413276}
-  m_Radius: 0.13141328
+  m_Offset: {x: 0, y: -0.012430112}
+  m_Radius: 0.1
 --- !u!1 &1251853133
 GameObject:
   m_ObjectHideFlags: 0

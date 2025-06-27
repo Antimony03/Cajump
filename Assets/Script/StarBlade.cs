@@ -14,17 +14,24 @@ public class StarBlade : MonoBehaviour
     {
         if (player == null || hasScored) return;
 
-        // Check if player is reasonably close and above the star
         float verticalDistance = player.position.y - transform.position.y;
         float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
 
-        if (verticalDistance > 0.5f && horizontalDistance < 1f)
+        // Tighter check: player must be close horizontally and clearly above
+        bool isAbove = verticalDistance > 0.6f;
+        bool isAligned = horizontalDistance < 0.4f;
+
+        // Optional: only score if player is falling
+        bool isFalling = player.GetComponent<Rigidbody2D>().linearVelocity.y < 0;
+
+        if (isAbove && isAligned && isFalling)
         {
             hasScored = true;
             ScoreManager.instance?.AddScore(1);
-            Destroy(gameObject); // or play vanish effect
+            Destroy(gameObject);
         }
     }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
